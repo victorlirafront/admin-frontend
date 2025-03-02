@@ -38,7 +38,7 @@ export default {
   <div class="checkout">
     <div class="close-wrapper">
       <p class="close-wrapper__label">Carrinho de compras</p>
-      <img class="close" src="../../assets/close-btn.svg" alt="close btn" @click="closeCheckout" />
+      <img class="close" src="/close-btn.svg" alt="close btn" @click="closeCheckout" />
     </div>
 
     <div class="cart-products">
