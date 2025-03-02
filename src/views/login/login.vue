@@ -43,7 +43,6 @@
 import Axios from 'axios'
 import { API_BASE_URL } from '@/src/constants/endpoints'
 import Toastify from 'toastify-js'
-import 'toastify-js/src/toastify.css';
 
 export default {
   data(): {

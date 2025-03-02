@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import products from '../data/mock_products.json'
 import type { Product } from '@/src/types/tshirt'
 import { calculateProductAvailability } from '@/src/utils/products'
+import Toastify from 'toastify-js'
 
 export const useCartStore = defineStore('cart', {
   state: () => {
@@ -20,6 +21,23 @@ export const useCartStore = defineStore('cart', {
         }
       }
     },
+    showToast(message: string, backgroundColor: string): void {
+      Toastify({
+        text: message,
+        duration: 3000,
+        gravity: 'top',
+        position: 'center',
+        style: {
+          fontSize: '14px',
+          background: backgroundColor,
+          color: '#fff',
+          fontWeight: 'bold',
+          marginTop: '100px',
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
+          borderRadius: '4px'
+        },
+      }).showToast()
+    },
 
     addToCart(productId: number) {
       const product = this.products.find((item) => item.id === productId)
@@ -29,12 +47,12 @@ export const useCartStore = defineStore('cart', {
       const productsWithAvailability = calculateProductAvailability([product])
 
       if (!productsWithAvailability.find(product => product.id === productId)?.available) {
-        alert('O produto não está disponível');
+        this.showToast('O produto não está disponível', 'red')
         return;
       }
 
       if (this.cartItems.find((item) => item.id === productId)) {
-        alert('O produto já existe no carrinho')
+        this.showToast('O produto já existe no carrinho', 'red')
         return
       }
 
@@ -46,9 +64,9 @@ export const useCartStore = defineStore('cart', {
           this.cartItems.push({ ...product, quantity: 1 })
         }
         this.saveToLocalStorage()
-        console.log('Produto adicionado ao carrinho...')
+        this.showToast('Produto adicionado ao carrinho', '#2ac64e')
       } else {
-        console.log('Produto não encontrado')
+        this.showToast('Produto não encontrado', 'red')
       }
     },
 
