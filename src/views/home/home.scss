@@ -5,6 +5,11 @@
   justify-content: center;
   flex-wrap: wrap;
   margin: 100px auto 100px auto;
+  min-height: calc(100vh - 300px);
+
+  .unavailable {
+    filter: grayscale(100%);
+  }
 }
 
 .card {
