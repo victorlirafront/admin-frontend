@@ -11,3 +11,5 @@ import AppHeader from "./src/components/header/AppHeader.vue"
     <AppFooter/>
   </div>
 </template>
+
+<style src="~/src/assets/style.css"></style>
