@@ -56,7 +56,6 @@
 <script lang="ts">
 import Axios from 'axios'
 import Toastify from 'toastify-js'
-import 'toastify-js/src/toastify.css';
 import { API_BASE_URL } from '~/src/constants/endpoints';
 
 export default {
