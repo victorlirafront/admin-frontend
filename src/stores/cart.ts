@@ -47,12 +47,12 @@ export const useCartStore = defineStore('cart', {
       const productsWithAvailability = calculateProductAvailability([product])
 
       if (!productsWithAvailability.find(product => product.id === productId)?.available) {
-        this.showToast('O produto não está disponível', 'red')
+        this.showToast('O produto não está disponível', '#ff6060')
         return;
       }
 
       if (this.cartItems.find((item) => item.id === productId)) {
-        this.showToast('O produto já existe no carrinho', 'red')
+        this.showToast('O produto já existe no carrinho', '#ff6060')
         return
       }
 
@@ -66,7 +66,7 @@ export const useCartStore = defineStore('cart', {
         this.saveToLocalStorage()
         this.showToast('Produto adicionado ao carrinho', '#2ac64e')
       } else {
-        this.showToast('Produto não encontrado', 'red')
+        this.showToast('Produto não encontrado', '#ff6060')
       }
     },
 
