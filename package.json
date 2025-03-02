@@ -21,6 +21,8 @@
     "vue-router": "latest"
   },
   "devDependencies": {
+    "sass": "^1.81.0",
+    "sass-loader": "^16.0.3",
     "vite-plugin-vue-devtools": "^7.5.4",
     "vitest": "^3.0.7"
   }

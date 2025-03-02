@@ -9,3 +9,7 @@ export default {
   name: 'AppFooter',
 }
 </script>
+
+<style scoped lang="scss">
+@use './footer.scss' as *;
+</style>
