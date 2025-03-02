@@ -78,11 +78,11 @@ export default {
       this.errors.passwordCheck = this.password !== this.passwordCheck
 
       if (this.errors.name) {
-        this.showToast('Nome é obrigatório', 'red')
+        this.showToast('Nome é obrigatório', '#ff6060')
       } else if (this.errors.password) {
-        this.showToast('A senha deve ter no mínimo 6 caracteres', 'red')
+        this.showToast('A senha deve ter no mínimo 6 caracteres', '#ff6060')
       } else if (this.errors.passwordCheck) {
-        this.showToast('As senhas não coincidem', 'red')
+        this.showToast('As senhas não coincidem', '#ff6060')
       }
 
       return !Object.values(this.errors).includes(true)
@@ -128,7 +128,7 @@ export default {
         this.showToast('Cadastro realizado com sucesso!', '#2ac64e')
         this.$router.push('/login')
       } catch (err) {
-        this.showToast('Erro ao cadastrar. Tente novamente.', 'red')
+        this.showToast('Erro ao cadastrar. Tente novamente.', '#ff6060')
         console.error('Erro ao cadastrar:', err)
       }
     },

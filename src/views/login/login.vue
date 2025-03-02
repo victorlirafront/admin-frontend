@@ -103,7 +103,7 @@ export default {
         this.showToast('Login bem-sucedido!', '#2ac64e')
 
       } catch (error) {
-        this.showToast('Erro ao fazer login. Verifique suas credenciais.', 'red')
+        this.showToast('Erro ao fazer login. Verifique suas credenciais.', '#ff6060')
         console.error('Erro ao fazer login:', error)
       }
     },
