@@ -4,6 +4,10 @@
   align-items: center;
   height: 100vh;
   background-color: #f4f4f4;
+  
+  a {
+    text-decoration: none;
+  }
 
   &__form {
     background-color: #fff;
@@ -72,6 +76,9 @@
     border-color: #a82472;
     padding: 10px;
     cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   &__out-text {
@@ -86,5 +93,7 @@
     margin-top: 10px;
     display: block;
     margin: 0 auto;
+    background: none;
+    border: none;
   }
 }

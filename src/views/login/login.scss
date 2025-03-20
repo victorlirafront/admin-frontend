@@ -5,6 +5,10 @@
   height: 100vh;
   background-color: #f4f4f4;
 
+  a {
+    text-decoration: none;
+  }
+
   &__form {
     background-color: #fff;
     padding: 2rem;
@@ -63,15 +67,18 @@
     &--error {
       border-color: #ff4d4d;
       background-color: #ffe6e6;
-    }  
+    }
   }
-  
+
   &__submit {
     color: #fff;
     background-color: #a82472;
     border-color: #a82472;
     padding: 10px;
     cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   &__ou-text {
@@ -87,5 +94,9 @@
     text-align: center;
     margin: 0 auto;
     display: block;
+    background: transparent;
+    border: none;
+    text-decoration: none;
+    border: none;
   }
 }
