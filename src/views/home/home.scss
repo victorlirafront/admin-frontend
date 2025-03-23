@@ -10,6 +10,10 @@
   .unavailable {
     filter: grayscale(100%);
   }
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .card {
@@ -63,6 +67,7 @@
   line-height: 1.4;
   margin: 8px 0;
   text-align: center;
+  color: #000;
 }
 
 .card .price {

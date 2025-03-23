@@ -1,21 +1,22 @@
 <script lang="ts">
-import { defineComponent } from 'vue'; // Import defineComponent
-import { useCartStore } from '../../stores/cart';
-import products from '../../data/mock_products.json';
-import { calculateProductAvailability } from '@/src/utils/products';
+import { defineComponent } from 'vue' // Import defineComponent
+import { useCartStore } from '../../stores/cart'
+import products from '../../data/mock_products.json'
+import { calculateProductAvailability } from '@/src/utils/products'
 
 export default defineComponent({
   name: 'HomeView',
   setup() {
-    const cart = useCartStore();
-    const { addToCart } = cart;
-    const productsWithAvailability = calculateProductAvailability(products);
+    const cart = useCartStore()
+    const { addToCart } = cart
+    const productsWithAvailability = calculateProductAvailability(products)
+
     return {
       productsWithAvailability,
       addToCart,
-    };
+    }
   },
-});
+})
 </script>
 
 <template>
@@ -27,12 +28,14 @@ export default defineComponent({
         class="card"
         :class="{ available: product.available, unavailable: !product.available }"
       >
-        <div class="info">
-          <img class="header__cart-img" :src="product.image" alt="cart icon" />
-          <p class="title">{{ product.name }}</p>
-          <p class="price">R$ {{ product.price.toFixed(2) }}</p>
-        </div>
-        <button class="add-to-cart" @click="addToCart(product.id)">
+        <NuxtLink :to="`/product/${product.id}`">
+          <div class="info">
+            <img class="header__cart-img" :src="product.image" :alt="product.name" />
+            <p class="title">{{ product.name }}</p>
+            <p class="price">R$ {{ product.price.toFixed(2) }}</p>
+          </div>
+        </NuxtLink>
+        <button class="add-to-cart" @click="addToCart(product.id)" :disabled="!product.available">
           {{ product.available ? 'Adicionar' : 'Indisponível' }}
         </button>
       </div>
