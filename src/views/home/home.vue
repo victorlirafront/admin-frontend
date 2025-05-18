@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent } from 'vue' // Import defineComponent
+import { defineComponent } from 'vue'
 import { useCartStore } from '../../stores/cart'
 import products from '../../data/mock_products.json'
 import { calculateProductAvailability } from '@/src/utils/products'
@@ -21,6 +21,9 @@ export default defineComponent({
 
 <template>
   <main class="main">
+    <div class="banner-heading">
+      <img src="" />
+    </div>
     <div class="card-wrapper">
       <div
         v-for="(product, index) in productsWithAvailability"
@@ -30,7 +33,14 @@ export default defineComponent({
       >
         <NuxtLink :to="`/product/${product.id}`">
           <div class="info">
-            <img class="header__cart-img" :src="product.image" :alt="product.name" />
+            <div class="header__cart-background">
+              <div
+              class="header__cart-img"
+              :style="{ backgroundImage: `url(${product.image})` }"
+              :aria-label="product.name"
+              role="img"
+            ></div>
+            </div>
             <p class="title">{{ product.name }}</p>
             <p class="price">R$ {{ product.price.toFixed(2) }}</p>
           </div>
