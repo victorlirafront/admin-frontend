@@ -20,11 +20,29 @@ const { data: product } = await useAsyncData('product', async () => {
     <div class="products">
       <div v-if="product" class="product-box-image">
         <img class="product-image" :src="product.image" alt="Product Image" />
-        <img class="product-image-sheet" src="https://ik.imagekit.io/Victorliradev/loja-virtual-vue/measures-tshirt_p7PT-1yRV.webp?updatedAt=1742744094164" alt="Product Image" />
       </div>
       <div class="product-box-info">
         <h1>{{ product.name }}</h1>
         <p>Preço: R$ {{ product.price.toFixed(2) }}</p>
+        <p>Cor: Preto</p>
+        <div class="color-wrapper">
+          <div class="color black"></div>
+          <div class="color brown"></div>
+          <div class="color pink"></div>
+        </div>
+
+        <div class="sizes-wrapper">
+          <div class="size selected">P</div>
+          <div class="size">P</div>
+          <div class="size">M</div>
+          <div class="size">G</div>
+        </div>
+
+        <div class="quantity">
+          <button class="quantity-btn decrease">-</button>
+          <div class="quantity-item">1</div>
+          <button class="quantity-btn increase">+</button>
+        </div>
       </div>
     </div>
   </main>

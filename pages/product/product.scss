@@ -5,11 +5,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   .products {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
 
@@ -19,27 +19,109 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid red;
-    
+
       .product-image {
         display: block;
-        max-width: 350px;
-        height: auto; 
+        max-width: 500px;
+        height: auto;
       }
-    
+
       .product-image-sheet {
         display: block;
         max-width: 220px;
         height: auto;
       }
     }
-    
 
     .product-box-info {
-      border: 1px solid blue;
       height: 100%;
       width: 50%;
-      text-align: center;
+      text-align: start;
+      padding-top: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: self-start;
+
+      .color-wrapper {
+        padding: 10px;
+        display: flex;
+        width: 300px;
+
+        .color {
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+          margin-right: 10px;
+          cursor: pointer;
+
+          &.black {
+            background: black;
+          }
+
+          &.brown {
+            background: #6e3e23;
+          }
+
+          &.pink {
+            background: #ffefef;
+          }
+        }
+      }
+
+      .sizes-wrapper {
+        padding: 20px;
+        padding-left: 0;
+        display: flex;
+
+        .size {
+          width: 50px;
+          height: 30px;
+          border: 1px solid black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &.selected {
+            background: black;
+            color: white;
+          }
+
+          &:not(:last-child) {
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .quantity {
+        display: flex;
+        border: 1px solid black;
+        max-width: 300px;
+        height: 40px;
+
+        .quantity-item {
+          width: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .quantity-btn {
+          width: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          font-size: 20px;
+
+          &.decrease {
+            cursor: not-allowed;
+            font-size: 20px;
+          }
+          &.increase {
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 }
